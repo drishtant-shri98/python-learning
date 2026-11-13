@@ -1,0 +1,99 @@
+1. camelCase
+char = input("writeCamelCase: ")
+
+snake = ""
+for i in char:
+    if i.isupper():
+        snake = snake + "_" + i.lower()
+    else:
+        snake = snake + i
+
+print(snake)
+
+
+2. Coke Machine
+charge = 50
+while charge > 0:
+    insert = int(input("Insert Coin: "))
+    if insert not in (5,10,25):
+        print("Amount Due:", charge)
+    else:
+        charge = charge - insert
+        if charge > 0:
+            print("Amount Due:", charge)
+        elif charge <=0:
+            print("Change Owed:", charge - charge*2)
+
+
+3. Just setting up my twttr
+user_input = input("Input: ")
+
+vowels = "aeiouAEIOU"
+
+output = ""
+for i in user_input:
+    if i in vowels:
+        continue
+    else:
+        output = output + i
+
+print("Output: " + output)
+
+
+4. Vanity Plates
+def main():
+    plate = input("Plate: ").upper()
+    if is_valid(plate):
+        print("Valid")
+    else:
+        print("Invalid")
+
+def is_valid(s):
+    if not s[0:2].isalpha():
+        return False
+    if not (len(s) >= 2 and len(s) <= 6):
+        return False
+    if not s.isalnum():
+        return False
+    for i in range (len(s)):
+        if s[i].isdigit():
+            if s[i] == "0":
+                return False
+            if not s[i:].isdigit():
+                return False
+            break
+
+    return True
+
+main()
+
+
+5. Nutrition Facts
+fruit = input("Item: ").lower().strip()
+
+raw_fruits_calories = {
+    "apple": "130",
+    "avocado": "50",
+    "banana": "110",
+    "cantaloupe": "50",
+    "grapefruit": "60",
+    "grapes": "90",
+    "honeydew melon": "50",
+    "kiwifruit": "90",
+    "lemon": "15",
+    "lime": "20",
+    "nectarine": "60",
+    "orange": "80",
+    "peach": "60",
+    "pear": "100",
+    "pineapple": "50",
+    "plums": "70",
+    "strawberries": "50",
+    "sweet cherries": "100",
+    "tangerine": "50",
+    "watermelon": "80",
+}
+
+if fruit in raw_fruits_calories:
+    print("Calories:", raw_fruits_calories[fruit])
+
