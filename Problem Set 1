@@ -1,6 +1,5 @@
 1. Deep Thought
 Q = input("What is the Answer to the Great Question of Life, the Universe, and Everything? ").strip().lower()
-code
 match Q:
     case "42" | "forty-two" | "Forty Two" | "FoRty TwO" | " 42" | "forty two" | "42 " | " 42 ":
         print("Yes")
@@ -70,7 +69,6 @@ def main():
     elif 18 <= t <= 19:
         print("dinner time")
 
-
 def convert(time):
     time = time.strip().lower().replace(".", "").replace(" ", "")
 
@@ -80,12 +78,12 @@ def convert(time):
 
     hours, minutes = time.split(":")
     hours = int(hours)
+    minutes = int(minutes)
 
     if is_pm and hours != 12:
         hours += 12        # 6 pm -> 18
     if is_am and hours == 12:
         hours = 0          # 12 am -> 0 (midnight)
-
     return hours + minutes / 60
 
 if __name__ == "__main__":
